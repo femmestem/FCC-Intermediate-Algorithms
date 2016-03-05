@@ -3,15 +3,13 @@
 
 // The lowest number will not always come first.
 function sumAll(arr) {
-    // sort array
-    var sortedArr = arr.sort(function(a, b) {
-        return a - b;
-    });
-    var rangeArr = [];
+    var rangeArr = [],
+        a = arr[0],
+        b = arr[1];
 
     // get numbers in range a..b
     // add numbers in range a..b to array
-    for (var i=sortedArr[0], l = sortedArr[1]; i<=l; i++) {
+    for (var i = Math.min(a, b), l = Math.max(a, b); i<=l; i++) {
         rangeArr.push(i);
     }
     // sum all elements of array
