@@ -8,7 +8,6 @@ function sumAll(arr) {
         return a - b;
     });
     var rangeArr = [];
-    var sum = 0;
 
     // get numbers in range a..b
     // add numbers in range a..b to array
@@ -16,8 +15,11 @@ function sumAll(arr) {
         rangeArr.push(i);
     }
     // sum all elements of array
-    console.log(rangeArr);
-  // return sum;
+    return rangeArr.reduce(getSum);
+
+    function getSum(accumulator, element) {
+        return accumulator + element;
+    }
 }
 
 console.log(sumAll([4, 1]));
